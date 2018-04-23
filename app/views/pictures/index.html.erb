@@ -3,26 +3,34 @@
 
 <% @pictures.each do |picture| %>
 <p><%= picture.title %>, <%= picture.artist %></p>
-<img src="<%= picture.url %>" alt="<%= picture.title %>">
+<a href= "/pictures/<%= picture.id %>">
+    <img src="<%= picture.url %>" alt="<%= picture.title %>"></a>
+
 <% end %>
 
 <h1>recent pictures(<%= @pictures_newest_five.length %>)</h1>
 <% @pictures_newest_five.each do |picture| %>
 <p><%= picture.title %>, <%= picture.artist %></p>
-<img src="<%= picture.url %>" alt="<%= picture.title %>">
+<a href= "/pictures/<%= picture.id %>">
+    <img src="<%= picture.url %>" alt="<%= picture.title %>"></a>
+
 <% end %>
 
 <h1>pictures added in the past month(<%= @pictures_before_month.length %>)</h1>
 <% @pictures_before_month.each do |picture| %>
 <p><%= picture.title %>, <%= picture.artist %></p>
-<img src="<%= picture.url %>" alt="<%= picture.title %>">
+<a href= "/pictures/<%= picture.id %>">
+    <img src="<%= picture.url %>" alt="<%= picture.title %>"></a>
+
 <% end %>
 
 <h1>pictures added in the last year(<%= @pictures_before_year.length %>)</h1>
 <% if @pictures_before_year != nil  %>
 <% @pictures_before_year.each do |picture| %>
 <p><%= picture.title %>, <%= picture.artist %></p>
-<img src="<%= picture.url %>" alt="<%= picture.title %>">
+<a href= "/pictures/<%= picture.id %>">
+    <img src="<%= picture.url %>" alt="<%= picture.title %>"></a>
+
 <% end %>
 <% else %>
 <p>no pictures found</p>
