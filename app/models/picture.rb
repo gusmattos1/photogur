@@ -1,4 +1,5 @@
 class Picture < ApplicationRecord
+  belongs_to :users
 
   validates :artist, :url, presence: true, length: { minimum: 3 }
   validates :url, uniqueness: true
